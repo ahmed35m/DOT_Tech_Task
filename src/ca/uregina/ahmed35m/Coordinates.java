@@ -1,3 +1,10 @@
+/**
+ * Author: Muhammad M Ahmed
+ * Date: 08-06-2018
+ * Description: This is a simple program that calculates shortest distance and longest distance 
+ * between 2 coordinates using haversine function.
+ */
+
 package ca.uregina.ahmed35m;
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,6 +26,11 @@ public class Coordinates {
 	public double getLat() {
 		return lat;
 	}
+	/**
+	 * Description: setter for latitude. Randomly assigns a number for valid lat in degree
+	 * Parameter: none
+	 * Return: none
+	 */
 	public void setLat() {
 
 		Random rg = new Random();
@@ -28,6 +40,11 @@ public class Coordinates {
 	public double getLongt() {
 		return longt;
 	}
+	/**
+	 * Description: setter for longtitude. Randomly assigns a number for valid longt in degree
+	 * Parameter: none
+	 * Return: none
+	 */
 	public void setLongt() {
 		Random rg = new Random();
 		this.longt = rg.nextInt(360)-180+ (rg.nextInt(99999999))*(Math.pow(10, -8));
@@ -67,6 +84,13 @@ public class Coordinates {
 	{
 		return d/earth_radius;
 	}
+	
+	/*
+	 * Description: Calculates shortest distance b/w 2 coordinates
+	 * Parameter: Coordinate a and Coodinate b
+	 * Pre-Condition: Cooridinates are in degree
+	 * Returns : double
+	 */
 	public static double getShortestDist(Coordinates a, Coordinates b)
 	{
 		double d =0;
